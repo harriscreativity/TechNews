@@ -25,6 +25,11 @@ export default styles = StyleSheet.create({
         marginTop:10,
         marginBottom:10
     },
+    header:{
+        margin:15,
+        alignItems:'center',
+        flexDirection:'row',
+    },
     spacer:{
         flex:1
     },
@@ -88,8 +93,10 @@ export default styles = StyleSheet.create({
         },
         shadowOpacity: 0.23,
         shadowRadius: 2.62,
-        elevation: 4,
         margin:18,
+        elevation: 5,
+        backgroundColor:'#F7F7F7',
+        borderRadius:20
     },
     headlineSubtitle:{
         color:'#707070'
@@ -159,5 +166,18 @@ export default styles = StyleSheet.create({
     newsSubtitle:{
         fontWeight : '400',
         color:'#333'
+    },
+    h1:{
+        fontSize : 18,
+        fontWeight : 'bold',
+        padding: 10
+    },
+    p:{
+        fontSize : 14,
+        padding : 10
+    },
+    span:{
+        fontSize:13,
+        color : '#707070'
     }
 })

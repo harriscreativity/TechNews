@@ -8,7 +8,7 @@ import Carousel from 'react-native-snap-carousel';
 
 const HeadLine = props =>{
 
-    const { news, loading } = props
+    const { news, loading,NavigateTo } = props
     let data = [];
 
     if(news)
@@ -24,7 +24,7 @@ const HeadLine = props =>{
     
 
     const renderItem = ({item, index}) =>{
-        return <TouchableOpacity activeOpacity={0.8} onPress={()=>{}}>
+        return <TouchableOpacity activeOpacity={0.8} onPress={()=>{ NavigateTo(item) }}>
             <View style={styles.shadowContainer}>
                 <View style={styles.headlines}>
                     <Image

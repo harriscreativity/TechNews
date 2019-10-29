@@ -1,27 +1,32 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { View,SafeAreaView,Image,Text,ScrollView } from 'react-native'
 
 import Header from '../../components/Header';
+import styles from '../../styles/styles';
 
 const Detail = ({ navigation }) =>{
 
     const { state } = navigation
     
-    return <View>
-        <SafeAreaView>
-            <Header goBack={navigation.goBack} />
+    const [loading,setLoading] = useState(false)
+
+    return <SafeAreaView>
             <ScrollView>
+                <Header goBack={navigation.goBack} />
                 <View>
-                    <Image style={{ height : 400 }} source={{ uri: state.params.urlToImage }} />
-                    <Text>{state.params.title}</Text>
-                    <Text>{state.params.content}</Text>
+                    <Image style={{ height : 400 }}
+                        loadingIndicatorSource={require('../../assets/error.png')} 
+                        onLoadStart={()=>{}} 
+                        onLoadEnd={()=>{}} source={{ uri: state.params.urlToImage }} />
+                    <Text style={styles.h1}>{state.params.title}</Text>
+                    <Text style={styles.p}>{state.params.content}</Text>
                 </View>
-                <View>
-                    <Text>{state.params.author}</Text>
+                <View style={styles.p}>
+                    <Text style={styles.span}>{state.params.author}</Text>
+                    <Text style={styles.span}>{state.params.publishedAt}</Text>
                 </View>
             </ScrollView>
         </SafeAreaView>
-    </View>
 }
 
 export default Detail;

@@ -9,9 +9,9 @@ const Header = (props) =>{
 
     return <View>
         <StatusBar />
-        <View style={styles.appbar}>
+        <View style={styles.header}>
             <TouchableOpacity onPress={()=>{ goBack(); }}>
-                <Image style={{ height:30, width : 30, }} source={require('../assets/left-arrow.png')} />
+                <Image style={{ height:25, width : 25, }} source={require('../assets/left-arrow.png')} />
             </TouchableOpacity>
             <View  style={styles.spacer} />
         </View>
